@@ -10,7 +10,7 @@ function _functionNameToTestName(functionName) {
 		.replace(/\W[A-Z](?=[a-z\W])/g, function(namePart) { return namePart.toLowerCase(); });}
 
 function _buildDescribeName(setupFunctions) {
-	var names = ['when'];
+	var names = ['when it'];
 
 	setupFunctions.forEach((setupFunction) => {
 		if(setupFunction instanceof Fixture) {

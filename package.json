@@ -1,5 +1,5 @@
 {
-  "name": "mocha-when",
+  "name": "whenIt",
   "version": "1.0.0",
   "description": "Adds 'When' syntax to Mocha for more expressive test setups.",
   "main": "index.js",
