@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Adds 'When' syntax to Mocha for more expressive test setups.",
   "main": "index.js",
+  "files": ["index.js"],
   "scripts": {
     "test": "mocha"
   },
@@ -21,7 +22,8 @@
     "mocha": "^2.5.3",
     "chai": "^3.5.0"
   },
-  "directories": {
-    "test": "test"
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/rally25rs/test-when-it.git"
   }
 }
