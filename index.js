@@ -118,7 +118,7 @@ function thenIt() {
 	var assertionFunctions = _argsToArr(arguments);
 
 	assertionFunctions.forEach(function(assertion) {
-		it(_functionNameToTestName(assertion.name), assertion);
+		it(_functionNameToTestName('then it ' + assertion.name), assertion);
 	});
 }
 
