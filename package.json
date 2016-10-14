@@ -1,5 +1,5 @@
 {
-  "name": "whenIt",
+  "name": "test-when-it",
   "version": "1.0.0",
   "description": "Adds 'When' syntax to Mocha for more expressive test setups.",
   "main": "index.js",
@@ -8,14 +8,17 @@
   },
   "keywords": [
     "mocha",
-    "mochajs"
+    "mochajs",
+    "jasmine",
+    "testing",
+    "unit-testing"
   ],
   "author": "Jeff Valore",
   "license": "UNLICENSED",
   "dependencies": {
-    "mocha": "^2.5.3"
   },
   "devDependencies": {
+    "mocha": "^2.5.3",
     "chai": "^3.5.0"
   },
   "directories": {
