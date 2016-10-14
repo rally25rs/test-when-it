@@ -1,6 +1,6 @@
 {
   "name": "test-when-it",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Adds 'When' syntax to Mocha for more expressive test setups.",
   "main": "index.js",
   "files": ["index.js"],

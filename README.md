@@ -14,6 +14,10 @@ Add to your test environment.
 
 ```
 require('when-it');
+
+// or with a regular script tag
+
+<script src="node_modules/test-when-it/index.js" type="text/javascript"></script>
 ```
 
 # Use

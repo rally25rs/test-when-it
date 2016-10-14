@@ -122,9 +122,13 @@ function thenIt() {
 	});
 }
 
+g.whenIt = whenIt;
+g.thenIt = thenIt;
+g.Fixture = Fixture;
+
 if(module && module.exports) {
-	module.exports.whenIt = g.whenIt = whenIt;
-	module.exports.thenIt = g.thenIt = thenIt;
-	module.exports.Fixture = g.Fixture = Fixture;
+	module.exports.whenIt = g.whenIt;
+	module.exports.thenIt = g.thenIt;
+	module.exports.Fixture = g.Fixture;
 }
 })();
