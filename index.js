@@ -69,6 +69,21 @@ Fixture.prototype.apply = function() {
 	return this;
 }
 
+function setIt(propName, propValue) {
+	beforeEach(function() {
+		Object.defineProperty(this, propName, {
+			configurable: true,
+			get: function() {
+				return (propValue instanceof Function) ? propValue.call(this) : propValue;
+			}
+		});
+	});
+
+	afterEach(function() {
+		delete this[propName];
+	});
+};
+
 function whenIt() {
 	var setupFunctions = _argsToArr(arguments);
 	var testFunction = setupFunctions.pop();
@@ -122,11 +137,13 @@ function thenIt() {
 	});
 }
 
+g.setIt = setIt;
 g.whenIt = whenIt;
 g.thenIt = thenIt;
 g.Fixture = Fixture;
 
 if(module && module.exports) {
+	module.exports.setIt = g.setIt;
 	module.exports.whenIt = g.whenIt;
 	module.exports.thenIt = g.thenIt;
 	module.exports.Fixture = g.Fixture;

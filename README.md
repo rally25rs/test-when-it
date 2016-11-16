@@ -22,6 +22,31 @@ require('when-it');
 
 # Use
 
+## setIt(propertyName, propertyValue)
+
+This function assignes a property getter with the name `propertyName` to the `this` context. The property is deleted after each test.
+
+The `propertyValue` parameter can be a literal value, or a function. If a function is passed, it is called each time the property is accessed and the return value is used as the property value (like a property getter). (The value is _not_ memoized like Ruby/rspec's `let()`)
+
+```
+describe('using setIt', function() {
+	setIt('fromLiteral', 'valueFromLiteral');
+
+	setIt('fromFunc', function() {
+		return 'valueFromFunc';
+	});
+
+	it('makes a value available on the test context', function() {
+		expect(this.fromLiteral).to.equal('valueFromLiteral');
+	});
+
+	it('makes the return value of a function available on the test context', function() {
+		expect(this.fromFunc).to.equal('valueFromFunc');
+	});
+
+});
+```
+
 ## whenIt(..)
 
 The `whenIt(...)` function takes any number of arguments that act as test setup (aka `beforeEach`). The _last_ parameter must be a function that is executed as the test context.

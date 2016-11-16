@@ -86,3 +86,26 @@ describe('fixture', function() {
 		});
 	});
 });
+
+describe('setIt', function() {
+	setIt('fromLiteral', 'valueFromLiteral');
+	setIt('fromFunc', function() {
+		return 'valueFromFunc';
+	});
+	setIt('throwError', function() {
+		throw 'error';
+	})
+
+	it('makes a value available on the test context', function() {
+		expect(this.fromLiteral).to.equal('valueFromLiteral');
+	});
+
+	it('makes the return value of a function available on the test context', function() {
+		expect(this.fromFunc).to.equal('valueFromFunc');
+	});
+
+	it('is not evaluated until used', function() {
+		var self = this;
+		expect(function() { self.throwError; }).to.throw('error');
+	});
+});
